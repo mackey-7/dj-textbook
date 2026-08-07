@@ -148,7 +148,7 @@ a {
 }
 
 .menu__list li {
-  border-top: 1px solid rgba(170, 170, 170, 0.35);
+  border-top: 1px solid var(--gray);
 }
 
 .menu__list a,
@@ -377,35 +377,15 @@ a {
   border-top: 3px solid var(--accent);
 }
 
-.interp__head {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1.25rem;
-}
-
 .interp__badge {
-  font-family: inherit;
+  display: inline-block;
+  margin: 0 0 1.25rem;
   font-weight: 700;
   font-size: 0.8rem;
   color: var(--white);
   background: var(--accent);
-  border: 0;
   padding: 0.25rem 0.8rem;
-  cursor: pointer;
   line-height: 1.7;
-}
-
-.interp__hint {
-  font-size: 0.75rem;
-  color: var(--gray);
-}
-
-.interp__note {
-  margin: 0 0 1.5rem;
-  padding: 0.9rem 1rem;
-  background: var(--white);
-  font-size: 0.875rem;
 }
 
 .interp__body p:last-child {
