@@ -5,15 +5,16 @@
   /* 補助ラベル用。本文には使わない */
   --sub: #666666;
   --line: #dcdcdc;
-  --header-bg: #000000;
-  --header-text: #ffffff;
+  --dark-bg: #151515;
+  --dark-text: #ffffff;
   --accent: rgb(255, 72, 72);
   --accent-soft: rgba(255, 72, 72, 0.1);
 
-  --font-head: 'Zen Kaku Gothic New', 'Noto Sans JP', system-ui, sans-serif;
+  /* 見出し: 欧文はコンデンスの極太、和文はNoto Sans JPの900に落ちる */
+  --font-head: 'Oswald', 'Noto Sans JP', system-ui, sans-serif;
   --font-body: 'Noto Sans JP', system-ui, sans-serif;
 
-  --measure: 40rem;
+  --measure: 42rem;
 }
 
 * {
@@ -45,7 +46,7 @@ a {
   color: inherit;
 }
 
-/* ---------- 共通レイアウト ---------- */
+/* ---------- ヘッダー / フッター ---------- */
 
 .shell {
   max-width: var(--measure);
@@ -54,8 +55,8 @@ a {
 }
 
 .site-header {
-  background: var(--header-bg);
-  color: var(--header-text);
+  background: #000;
+  color: var(--dark-text);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -73,48 +74,94 @@ a {
 
 .site-header__title {
   font-family: var(--font-head);
-  font-weight: 900;
-  font-size: 1rem;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
   text-decoration: none;
-  color: var(--header-text);
+  color: var(--dark-text);
 }
 
 .site-header__tag {
   font-size: 0.72rem;
-  color: var(--header-text);
-  opacity: 0.75;
+  color: var(--dark-text);
+  opacity: 0.8;
   letter-spacing: 0.08em;
   white-space: nowrap;
 }
 
 .site-footer {
-  background: var(--header-bg);
-  color: var(--header-text);
+  background: #000;
+  color: var(--dark-text);
   margin-top: 6rem;
   padding: 3rem 0 4rem;
   font-size: 0.8rem;
   line-height: 1.9;
 }
 
+/* ---------- 記事ヒーロー（黒帯にタイトル） ---------- */
+
+.hero {
+  background: var(--dark-bg);
+  color: var(--dark-text);
+  padding: 2rem 0 3rem;
+}
+
+.hero__inner {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.hero__crumb {
+  margin: 0 0 1.25rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+}
+
+.hero__crumb a {
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.hero__crumb a:hover {
+  color: var(--accent);
+  opacity: 1;
+}
+
+.hero__title {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 9vw, 3.4rem);
+  line-height: 1.15;
+  letter-spacing: 0.005em;
+  margin: 0;
+}
+
 /* ---------- トップ ---------- */
 
 .masthead {
-  padding: 4.5rem 0 3.5rem;
-  border-bottom: 2px solid var(--text);
+  background: var(--dark-bg);
+  color: var(--dark-text);
+  padding: 3.5rem 0 3.5rem;
+}
+
+.masthead__inner {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 1.25rem;
 }
 
 .masthead__title {
   font-family: var(--font-head);
-  font-weight: 900;
-  font-size: clamp(3rem, 15vw, 5.5rem);
-  line-height: 1.02;
-  letter-spacing: -0.055em;
+  font-weight: 700;
+  font-size: clamp(3rem, 16vw, 5.5rem);
+  line-height: 1.05;
+  letter-spacing: 0.005em;
   margin: 0;
 }
 
 .masthead__tag {
-  margin: 1.5rem 0 0;
+  margin: 1.25rem 0 0;
   font-size: 1rem;
   line-height: 1.9;
 }
@@ -125,9 +172,10 @@ a {
 }
 
 .masthead__lead {
-  margin: 2.25rem 0 0;
-  font-size: 1rem;
-  line-height: 2.1;
+  margin: 1.75rem 0 0;
+  font-size: 0.95rem;
+  line-height: 2.05;
+  opacity: 0.9;
 }
 
 .chapter {
@@ -136,14 +184,14 @@ a {
 
 .chapter__label {
   font-family: var(--font-head);
-  font-weight: 900;
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
-  margin: 0 0 1.25rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  margin: 0 0 1rem;
   display: inline-block;
   background: var(--accent);
   color: #fff;
-  padding: 0.35rem 0.7rem;
+  padding: 0.3rem 0.7rem;
   line-height: 1.4;
 }
 
@@ -164,11 +212,11 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1.15rem 0;
+  padding: 1.1rem 0;
   font-family: var(--font-head);
   font-weight: 700;
-  font-size: 1.05rem;
-  letter-spacing: -0.01em;
+  font-size: 1.15rem;
+  letter-spacing: 0.005em;
   line-height: 1.5;
   text-decoration: none;
   color: var(--text);
@@ -188,34 +236,29 @@ a {
   white-space: nowrap;
 }
 
-/* ---------- 記事 ---------- */
+/* ---------- 記事本文 ---------- */
 
 .article {
   max-width: var(--measure);
   margin: 0 auto;
-  padding: 3.5rem 1.25rem 0;
+  padding: 3rem 1.25rem 0;
 }
 
 .article h1 {
   font-family: var(--font-head);
-  font-weight: 900;
+  font-weight: 700;
   font-size: clamp(2rem, 8vw, 2.9rem);
   line-height: 1.2;
-  letter-spacing: -0.045em;
-  margin: 0 0 2.5rem;
-  padding-bottom: 2rem;
-  border-bottom: 2px solid var(--text);
+  margin: 0 0 2rem;
 }
 
 .article h2 {
   font-family: var(--font-head);
-  font-weight: 900;
-  font-size: 1.35rem;
-  line-height: 1.5;
-  letter-spacing: -0.03em;
-  margin: 4rem 0 1.5rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--line);
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.45;
+  letter-spacing: 0.005em;
+  margin: 3.5rem 0 1.5rem;
 }
 
 .article p {
@@ -224,7 +267,6 @@ a {
 
 .article strong {
   font-weight: 700;
-  color: var(--accent);
 }
 
 .article ul {
@@ -272,13 +314,13 @@ a {
 
 .interp__badge {
   font-family: var(--font-head);
-  font-weight: 900;
-  font-size: 0.75rem;
+  font-weight: 700;
+  font-size: 0.85rem;
   letter-spacing: 0.12em;
   color: #fff;
   background: var(--accent);
   border: 0;
-  padding: 0.35rem 0.75rem;
+  padding: 0.3rem 0.75rem;
   cursor: pointer;
   line-height: 1.4;
 }
@@ -292,7 +334,8 @@ a {
 .interp__note {
   margin: 0 0 1.5rem;
   padding: 0.9rem 1rem;
-  background: var(--accent-soft);
+  background: #fff;
+  border: 1px solid var(--line);
   font-size: 0.85rem;
   line-height: 1.9;
 }
@@ -304,15 +347,16 @@ a {
 /* ---------- 記事下ナビ ---------- */
 
 .article-foot {
-  margin-top: 5rem;
-  padding-top: 2rem;
+  max-width: var(--measure);
+  margin: 5rem auto 0;
+  padding: 2rem 1.25rem 0;
   border-top: 1px solid var(--line);
 }
 
 .article-foot a {
   font-family: var(--font-head);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 1rem;
   text-decoration: none;
   letter-spacing: 0.02em;
 }
@@ -325,7 +369,10 @@ a {
   body {
     font-size: 17px;
   }
+  .hero {
+    padding: 3rem 0 4.5rem;
+  }
   .masthead {
-    padding: 6rem 0 4rem;
+    padding: 5rem 0 4.5rem;
   }
 }
