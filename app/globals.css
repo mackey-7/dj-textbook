@@ -7,8 +7,8 @@
   --line: #dcdcdc;
   --header-bg: #000000;
   --header-text: #ffffff;
-  --accent: #2bff88;
-  --accent-soft: rgba(43, 255, 136, 0.18);
+  --accent: rgb(255, 72, 72);
+  --accent-soft: rgba(255, 72, 72, 0.1);
 
   --font-head: 'Zen Kaku Gothic New', 'Noto Sans JP', system-ui, sans-serif;
   --font-body: 'Noto Sans JP', system-ui, sans-serif;
@@ -38,7 +38,7 @@ body {
 
 ::selection {
   background: var(--accent);
-  color: #000;
+  color: #fff;
 }
 
 a {
@@ -121,8 +121,7 @@ a {
 
 .masthead__tag strong {
   font-weight: 700;
-  background: var(--accent);
-  padding: 0.1em 0.3em;
+  color: var(--accent);
 }
 
 .masthead__lead {
@@ -142,7 +141,7 @@ a {
   letter-spacing: 0.22em;
   margin: 0 0 1.25rem;
   display: inline-block;
-  background: var(--text);
+  background: var(--accent);
   color: #fff;
   padding: 0.35rem 0.7rem;
   line-height: 1.4;
@@ -176,7 +175,7 @@ a {
 }
 
 .toc a:hover {
-  background: var(--accent);
+  color: var(--accent);
 }
 
 .toc__state {
@@ -225,8 +224,7 @@ a {
 
 .article strong {
   font-weight: 700;
-  background: var(--accent);
-  padding: 0.1em 0.15em;
+  color: var(--accent);
 }
 
 .article ul {
@@ -236,6 +234,10 @@ a {
 
 .article li {
   margin-bottom: 0.6rem;
+}
+
+.article li::marker {
+  color: var(--accent);
 }
 
 .article hr {
@@ -258,7 +260,7 @@ a {
   margin: 2.5rem 0 3rem;
   padding: 1.5rem 1.35rem 0.5rem;
   background: var(--surface);
-  border-left: 4px solid var(--text);
+  border-left: 4px solid var(--accent);
 }
 
 .interp__head {
@@ -273,9 +275,9 @@ a {
   font-weight: 900;
   font-size: 0.75rem;
   letter-spacing: 0.12em;
-  color: #000;
+  color: #fff;
   background: var(--accent);
-  border: 1px solid var(--text);
+  border: 0;
   padding: 0.35rem 0.75rem;
   cursor: pointer;
   line-height: 1.4;
@@ -290,8 +292,7 @@ a {
 .interp__note {
   margin: 0 0 1.5rem;
   padding: 0.9rem 1rem;
-  background: #fff;
-  border: 1px solid var(--line);
+  background: var(--accent-soft);
   font-size: 0.85rem;
   line-height: 1.9;
 }
@@ -317,7 +318,7 @@ a {
 }
 
 .article-foot a:hover {
-  background: var(--accent);
+  color: var(--accent);
 }
 
 @media (min-width: 768px) {
