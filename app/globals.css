@@ -54,7 +54,7 @@ a {
   color: inherit;
 }
 
-/* ---------- ヘッダー / フッター ---------- */
+/* ---------- ヘッダー ---------- */
 
 .shell {
   max-width: var(--measure);
@@ -67,7 +67,7 @@ a {
   color: var(--white);
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 20;
 }
 
 .site-header__inner {
@@ -88,21 +88,98 @@ a {
   white-space: nowrap;
 }
 
-.site-nav {
-  display: flex;
-  gap: 1rem;
+.site-header__toggle {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.78rem;
+  color: var(--white);
+  background: transparent;
+  border: 1px solid var(--gray);
+  padding: 0.3rem 0.9rem;
+  cursor: pointer;
+  line-height: 1.7;
 }
 
-.site-nav a {
-  font-size: 0.78rem;
+.site-header__toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ---------- もくじメニュー ---------- */
+
+.menu {
+  background: var(--text);
+  border-top: 1px solid var(--gray);
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+}
+
+.menu__inner {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+.menu__section + .menu__section {
+  margin-top: 2.25rem;
+}
+
+.menu__label {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0 0 0.75rem;
+}
+
+.menu__en {
+  display: block;
   color: var(--gray);
+  font-weight: 400;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  line-height: 1.6;
+}
+
+.menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu__list li {
+  border-top: 1px solid rgba(170, 170, 170, 0.35);
+}
+
+.menu__list a,
+.menu__list span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  font-size: 0.9rem;
+  line-height: 1.7;
   text-decoration: none;
+  color: var(--white);
+}
+
+.menu__list a:hover {
+  color: var(--accent);
+}
+
+.menu__list span {
+  color: var(--gray);
+}
+
+.menu__state {
+  font-style: normal;
+  font-size: 0.7rem;
+  color: var(--gray);
   white-space: nowrap;
 }
 
-.site-nav a:hover {
-  color: var(--accent);
-}
+/* ---------- フッター ---------- */
 
 .site-footer {
   background: var(--black);
@@ -128,15 +205,8 @@ a {
 
 .hero__crumb {
   margin: 0 0 1rem;
-  font-size: 0.8rem;
-  color: var(--gray);
-}
-
-.hero__crumb a {
-  text-decoration: none;
-}
-
-.hero__crumb a:hover {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
   color: var(--accent);
 }
 
@@ -196,15 +266,20 @@ a {
 
 .chapter__label {
   color: var(--accent);
-  font-weight: 400;
-  font-size: clamp(1.5rem, 6vw, 2rem);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 5.5vw, 1.85rem);
   line-height: 1.5;
   margin: 0 0 1.5rem;
 }
 
-.chapter__label::before {
-  content: '／';
-  margin-right: 0.05em;
+.chapter__en {
+  display: block;
+  color: var(--gray);
+  font-weight: 400;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  line-height: 1.6;
+  margin-bottom: 0.35rem;
 }
 
 .toc {
@@ -337,23 +412,70 @@ a {
   margin-bottom: 1.6rem;
 }
 
-/* ---------- 記事下ナビ ---------- */
+/* ---------- 記事末尾のナビ ---------- */
 
-.article-foot {
+.article-nav {
   max-width: var(--measure);
-  margin: 4rem auto 5rem;
-  padding: 2rem 1.25rem 0;
-  border-top: 1px solid var(--gray);
+  margin: 4.5rem auto 0;
+  padding: 0 1.25rem 4rem;
 }
 
-.article-foot a {
+.article-nav__next {
+  border-top: 3px solid var(--accent);
+  padding-top: 1.5rem;
+}
+
+.article-nav__label {
+  margin: 0 0 0.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+}
+
+.article-nav__title {
+  display: block;
+  margin: 0;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 1.35rem;
+  line-height: 1.6;
   text-decoration: none;
 }
 
-.article-foot a:hover {
+a.article-nav__title:hover {
   color: var(--accent);
+}
+
+.article-nav__title--draft {
+  color: var(--gray);
+}
+
+.article-nav__state {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.72rem;
+  margin-left: 0.75rem;
+}
+
+.article-nav__sub {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--gray);
+  font-size: 0.8rem;
+}
+
+.article-nav__sub a {
+  text-decoration: none;
+}
+
+.article-nav__sub a:hover {
+  color: var(--accent);
+}
+
+.article-nav__sub span {
+  color: var(--gray);
 }
 
 @media (min-width: 768px) {
@@ -365,8 +487,5 @@ a {
   }
   .masthead {
     padding: 6rem 0 5rem;
-  }
-  .site-nav {
-    gap: 1.5rem;
   }
 }
