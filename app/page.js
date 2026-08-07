@@ -20,65 +20,69 @@ export default function Home() {
         </div>
       </section>
 
-      <main className="shell">
+      <main>
         <section className="chapter">
-          <p className="chapter__label">この教科書について</p>
-          <ul className="toc">
-            <li>
-              <span>
-                音楽好きは、全員DJをやるべきだ
-                <em className="toc__state">準備中</em>
-              </span>
-            </li>
-            <li>
-              <span>
-                やると耳が変わる
-                <em className="toc__state">準備中</em>
-              </span>
-            </li>
-            <li>
-              <span>
-                今から始めるのは遅くない
-                <em className="toc__state">準備中</em>
-              </span>
-            </li>
-            <li>
-              <span>
-                入場料は下がった。到達点は変わっていない
-                <em className="toc__state">準備中</em>
-              </span>
-            </li>
-            <li>
-              <span>
-                事実と解釈を分けて書く
-                <em className="toc__state">準備中</em>
-              </span>
-            </li>
-            <li>
-              <span>
-                著者について
-                <em className="toc__state">準備中</em>
-              </span>
-            </li>
-          </ul>
+          <div className="chapter__inner">
+            <h2 className="chapter__label">この教科書について</h2>
+            <ul className="toc">
+              <li>
+                <span>
+                  音楽好きは、全員DJをやるべきだ
+                  <em className="toc__state">準備中</em>
+                </span>
+              </li>
+              <li>
+                <span>
+                  やると耳が変わる
+                  <em className="toc__state">準備中</em>
+                </span>
+              </li>
+              <li>
+                <span>
+                  今から始めるのは遅くない
+                  <em className="toc__state">準備中</em>
+                </span>
+              </li>
+              <li>
+                <span>
+                  入場料は下がった。到達点は変わっていない
+                  <em className="toc__state">準備中</em>
+                </span>
+              </li>
+              <li>
+                <span>
+                  事実と解釈を分けて書く
+                  <em className="toc__state">準備中</em>
+                </span>
+              </li>
+              <li>
+                <span>
+                  著者について
+                  <em className="toc__state">準備中</em>
+                </span>
+              </li>
+            </ul>
+          </div>
         </section>
 
-        <section className="chapter">
-          <p className="chapter__label">DJをはじめる前に</p>
-          <ul className="toc">
-            <li>
-              <a href="/what-is-a-dj">
-                そもそもDJとは
-                <em className="toc__state">公開中</em>
-              </a>
-            </li>
-            <li>
-              <span>
-                何から始めるか
-                <em className="toc__state">準備中</em>
-              </span>
-            </li>
-          </ul>
+        <section className="chapter chapter--band">
+          <div className="chapter__inner">
+            <h2 className="chapter__label">DJをはじめる前に</h2>
+            <ul className="toc">
+              <li>
+                <a href="/what-is-a-dj">
+                  そもそもDJとは
+                  <em className="toc__state">公開中</em>
+                </a>
+              </li>
+              <li>
+                <span>
+                  何から始めるか
+                  <em className="toc__state">準備中</em>
+                </span>
+              </li>
+            </ul>
+          </div>
         </section>
       </main>
     </>
