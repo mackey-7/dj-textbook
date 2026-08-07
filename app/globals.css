@@ -1,7 +1,7 @@
 :root {
   --bg: #ffffff;
   --surface: #f4f4f4;
-  --text: #000000;
+  --text: rgb(21, 21, 21);
   /* 補助ラベル用。本文には使わない */
   --sub: #666666;
   --line: #dcdcdc;
