@@ -4,26 +4,22 @@ export default function Home() {
       <section className="masthead">
         <div className="masthead__inner">
           <h1 className="masthead__title">
-            DJの
+            EVERYONE
             <br />
-            教科書
+            SHOULD DJ.
           </h1>
-          <p className="masthead__tag">
-            事実と、<strong>僕の解釈</strong>を分けて書いています。
-          </p>
           <p className="masthead__lead">
-            音楽好きは、全員DJをやるべきだと思っています。好きな曲を自分の手で繋ぐのは、単純に楽しい。
-            そして一度やると、クラブもフェスも別物に聴こえます。そういう人が増えたら、シーンはもっと面白くなる。
-            <br />
-            日本語で読める体系的なDJの教科書がなかったので、書いています。無料、随時更新。
+            音楽好きは、全員DJをやるべきだと思っています。
+            好きな曲を自分の手で繋ぐのは、単純に楽しい。
+            そして一度やると、クラブもフェスも別物に聴こえます。
           </p>
         </div>
       </section>
 
       <main>
-        <section className="chapter">
+        <section className="chapter" id="vision">
           <div className="chapter__inner">
-            <h2 className="chapter__label">この教科書について</h2>
+            <h2 className="chapter__label">ビジョン</h2>
             <ul className="toc">
               <li>
                 <span>
@@ -49,6 +45,20 @@ export default function Home() {
                   <em className="toc__state">準備中</em>
                 </span>
               </li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="chapter" id="purpose">
+          <div className="chapter__inner">
+            <h2 className="chapter__label">この教科書の目的と役割</h2>
+            <ul className="toc">
+              <li>
+                <span>
+                  この教科書が引き受ける仕事
+                  <em className="toc__state">準備中</em>
+                </span>
+              </li>
               <li>
                 <span>
                   事実と解釈を分けて書く
@@ -57,7 +67,7 @@ export default function Home() {
               </li>
               <li>
                 <span>
-                  著者について
+                  更新方針と、議論への参加のしかた
                   <em className="toc__state">準備中</em>
                 </span>
               </li>
@@ -65,9 +75,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="chapter">
+        <section className="chapter" id="what-is-a-dj">
           <div className="chapter__inner">
-            <h2 className="chapter__label">DJをはじめる前に</h2>
+            <h2 className="chapter__label">DJとは</h2>
             <ul className="toc">
               <li>
                 <a href="/what-is-a-dj">
@@ -77,7 +87,27 @@ export default function Home() {
               </li>
               <li>
                 <span>
+                  現場の種類
+                  <em className="toc__state">準備中</em>
+                </span>
+              </li>
+              <li>
+                <span>
                   何から始めるか
+                  <em className="toc__state">準備中</em>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="chapter" id="author">
+          <div className="chapter__inner">
+            <h2 className="chapter__label">著者について</h2>
+            <ul className="toc">
+              <li>
+                <span>
+                  Mackey
                   <em className="toc__state">準備中</em>
                 </span>
               </li>
