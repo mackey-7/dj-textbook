@@ -1,15 +1,20 @@
+/*
+  パレットはこの6色のみ。これ以外の色を足さない。
+    白             rgb(255,255,255)
+    グレー背景     rgb(242,242,242)
+    黒（濃）       rgb(0,0,0)        ヘッダー・フッター
+    黒（薄）       rgb(21,21,21)     本文文字・ヒーロー背景
+    グレー文字     rgb(170,170,170)  メタ情報・罫線
+    赤             rgb(255,72,72)    アクセント
+*/
+
 :root {
-  --bg: #ffffff;
-  --surface: #f2f2f2;
+  --white: rgb(255, 255, 255);
+  --surface: rgb(242, 242, 242);
+  --black: rgb(0, 0, 0);
   --text: rgb(21, 21, 21);
-  /* 補助ラベル用。本文には使わない */
-  --sub: #9a9a9a;
-  --line: #dcdcdc;
-  --dark-bg: #151515;
-  --dark-text: #ffffff;
-  --dark-line: #333333;
+  --gray: rgb(170, 170, 170);
   --accent: rgb(255, 72, 72);
-  --accent-soft: rgba(255, 72, 72, 0.08);
 
   /* 見出し: 欧文はコンデンスの極太、和文はNoto Sans JPに落ちる（RAと同じ和欧混植） */
   --font-head: 'Oswald', 'Noto Sans JP', system-ui, sans-serif;
@@ -27,7 +32,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: var(--bg);
+  background: var(--white);
   color: var(--text);
 }
 
@@ -41,7 +46,7 @@ body {
 
 ::selection {
   background: var(--accent);
-  color: #fff;
+  color: var(--white);
 }
 
 a {
@@ -57,8 +62,8 @@ a {
 }
 
 .site-header {
-  background: #000;
-  color: var(--dark-text);
+  background: var(--black);
+  color: var(--white);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -80,21 +85,20 @@ a {
   font-size: 1.05rem;
   letter-spacing: 0.01em;
   text-decoration: none;
-  color: var(--dark-text);
+  color: var(--white);
 }
 
 .site-header__tag {
   font-family: var(--font-mono);
   font-size: 0.68rem;
-  color: var(--dark-text);
-  opacity: 0.75;
+  color: var(--gray);
   letter-spacing: 0.04em;
   white-space: nowrap;
 }
 
 .site-footer {
-  background: #000;
-  color: var(--dark-text);
+  background: var(--black);
+  color: var(--gray);
   padding: 3rem 0 4rem;
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -104,8 +108,8 @@ a {
 /* ---------- 記事ヒーロー（黒帯にタイトル） ---------- */
 
 .hero {
-  background: var(--dark-bg);
-  color: var(--dark-text);
+  background: var(--text);
+  color: var(--white);
   padding: 2rem 0 3rem;
 }
 
@@ -120,16 +124,15 @@ a {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.04em;
+  color: var(--gray);
 }
 
 .hero__crumb a {
   text-decoration: none;
-  opacity: 0.85;
 }
 
 .hero__crumb a:hover {
   color: var(--accent);
-  opacity: 1;
 }
 
 .hero__title {
@@ -144,8 +147,8 @@ a {
 /* ---------- トップ ---------- */
 
 .masthead {
-  background: var(--dark-bg);
-  color: var(--dark-text);
+  background: var(--text);
+  color: var(--white);
   padding: 3.5rem 0;
 }
 
@@ -179,7 +182,6 @@ a {
   margin: 1.75rem 0 0;
   font-size: 0.95rem;
   line-height: 2.05;
-  opacity: 0.9;
 }
 
 /* ---------- 章セクション ---------- */
@@ -193,8 +195,8 @@ a {
 }
 
 .chapter--dark {
-  background: var(--dark-bg);
-  color: var(--dark-text);
+  background: var(--text);
+  color: var(--white);
 }
 
 .chapter__inner {
@@ -222,16 +224,11 @@ a {
   list-style: none;
   margin: 0;
   padding: 0;
-  border-top: 1px solid var(--line);
-}
-
-.chapter--dark .toc,
-.chapter--dark .toc li {
-  border-color: var(--dark-line);
+  border-top: 1px solid var(--gray);
 }
 
 .toc li {
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--gray);
 }
 
 .toc a,
@@ -259,7 +256,7 @@ a {
   font-size: 0.68rem;
   font-style: normal;
   letter-spacing: 0.04em;
-  color: var(--sub);
+  color: var(--gray);
   white-space: nowrap;
 }
 
@@ -311,7 +308,7 @@ a {
 
 .article hr {
   border: 0;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--gray);
   margin: 3rem 0;
 }
 
@@ -344,7 +341,7 @@ a {
   font-weight: 700;
   font-size: 0.7rem;
   letter-spacing: 0.1em;
-  color: #fff;
+  color: var(--white);
   background: var(--accent);
   border: 0;
   padding: 0.35rem 0.8rem;
@@ -355,15 +352,15 @@ a {
 .interp__hint {
   font-family: var(--font-mono);
   font-size: 0.68rem;
-  color: var(--sub);
+  color: var(--gray);
   letter-spacing: 0.04em;
 }
 
 .interp__note {
   margin: 0 0 1.5rem;
   padding: 0.9rem 1rem;
-  background: #fff;
-  border: 1px solid var(--line);
+  background: var(--white);
+  border: 1px solid var(--gray);
   font-size: 0.85rem;
   line-height: 1.9;
 }
@@ -378,7 +375,7 @@ a {
   max-width: var(--measure);
   margin: 5rem auto 5rem;
   padding: 2rem 1.25rem 0;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--gray);
 }
 
 .article-foot a {
