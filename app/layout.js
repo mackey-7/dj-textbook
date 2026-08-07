@@ -23,7 +23,11 @@ export default function RootLayout({ children }) {
             <a className="site-header__title" href="/">
               DJの教科書
             </a>
-            <span className="site-header__tag">事実と、僕の解釈</span>
+            <nav className="site-nav">
+              <a href="/#vision">ビジョン</a>
+              <a href="/#purpose">目的と役割</a>
+              <a href="/what-is-a-dj">DJとは</a>
+            </nav>
           </div>
         </header>
 
