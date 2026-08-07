@@ -65,7 +65,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="chapter chapter--band">
+        <section className="chapter">
           <div className="chapter__inner">
             <h2 className="chapter__label">DJをはじめる前に</h2>
             <ul className="toc">
