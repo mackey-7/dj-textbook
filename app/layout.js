@@ -1,4 +1,5 @@
 import './globals.css'
+import SiteHeader from '../components/SiteHeader'
 
 export const metadata = {
   title: 'DJの教科書',
@@ -18,18 +19,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <header className="site-header">
-          <div className="site-header__inner">
-            <a className="site-header__title" href="/">
-              DJの教科書
-            </a>
-            <nav className="site-nav">
-              <a href="/#vision">ビジョン</a>
-              <a href="/#purpose">目的と役割</a>
-              <a href="/what-is-a-dj">DJとは</a>
-            </nav>
-          </div>
-        </header>
+        <SiteHeader />
 
         {children}
 
