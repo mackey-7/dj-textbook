@@ -8,6 +8,8 @@
     赤             rgb(255,72,72)    アクセント
 
   書体は Noto Sans JP のみ。差は太さとサイズだけで作る。
+  セクションの背景は白と灰の交互。順番はCSSが自動で決めるので
+  マークアップ側で指定しない。
 */
 
 :root {
@@ -170,18 +172,15 @@ a {
 }
 
 /* ---------- 章セクション ---------- */
+/* 背景は白→灰→白→灰で自動的に交互。奇数番目が白、偶数番目が灰 */
 
 .chapter {
   padding: 4rem 0;
+  background: var(--white);
 }
 
-.chapter--band {
+.chapter:nth-of-type(even) {
   background: var(--surface);
-}
-
-.chapter--dark {
-  background: var(--text);
-  color: var(--white);
 }
 
 .chapter__inner {
