@@ -4,7 +4,8 @@
   --text: #ececed;
   --muted: #8a8a93;
   --line: #24242a;
-  --accent: #d8ff3e;
+  --accent: #2bff88;
+  --accent-soft: rgba(43, 255, 136, 0.08);
 
   --font-head: 'Zen Kaku Gothic New', 'Noto Sans JP', system-ui, sans-serif;
   --font-body: 'Noto Sans JP', system-ui, sans-serif;
@@ -284,7 +285,7 @@ a {
 .interp__note {
   margin: 0 0 1.5rem;
   padding: 0.9rem 1rem;
-  background: rgba(216, 255, 62, 0.07);
+  background: var(--accent-soft);
   color: var(--muted);
   font-size: 0.78rem;
   line-height: 1.9;
